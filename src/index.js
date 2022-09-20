@@ -1,6 +1,6 @@
 
 const getDataFor1thLoad = async () => {
-    const responseWeather = await fetch('http://api.openweathermap.org/data/2.5/weather?lat=50.45466&lon=30.5238&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
+    const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.45466&lon=30.5238&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
     const myJson = await responseWeather.json();
     // .weather__city
     let weatherCity = document.getElementsByClassName("weather__city");
@@ -31,12 +31,12 @@ searchBtn.onclick = function (e) {
 };
 
 async function  getDataForSearch(city) {
-    const response = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=3b574fda9b6589454d967f8aef44540d');
+    const response = await fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=5&appid=3b574fda9b6589454d967f8aef44540d');
     let myCity = await response.json();
 
     myCity = myCity[0];
 
-    const responseWeather = await fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + myCity.lat + '&lon=' + myCity.lon + '&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
+    const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + myCity.lat + '&lon=' + myCity.lon + '&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
     const myJson = await responseWeather.json();
 
     // do something with myJson
