@@ -1,6 +1,6 @@
 
 const getDataFor1thLoad = async () => {
-    const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.45466&lon=30.5238&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
+    const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
     const myJson = await responseWeather.json();
 
 //    console.log("myJson=" + JSON.stringify( myJson));
@@ -46,7 +46,7 @@ async function  getDataForSearch(city, unit) {
 
     myCity = myCity[0];
 
-    // console.log("myCity=" + JSON.stringify( myCity ));
+    console.log("myCity=" + JSON.stringify( myCity ));
 
     const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + myCity.lat + '&lon=' + myCity.lon + '&units=' + unit + '&appid=3b574fda9b6589454d967f8aef44540d');
     const myJson = await responseWeather.json();
