@@ -2,6 +2,9 @@
 const getDataFor1thLoad = async () => {
     const responseWeather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.45466&lon=30.5238&units=metric&appid=3b574fda9b6589454d967f8aef44540d');
     const myJson = await responseWeather.json();
+
+    console.log("myJson="+myJson);
+
     // .weather__city
     let weatherCity = document.getElementsByClassName("weather__city");
     weatherCity[0].innerHTML = myJson.name;
