@@ -140,3 +140,8 @@ body {
   font-size: 15px;
   color: #000;
 }
+
+.unit__c,
+.unit__f {
+  cursor: pointer;
+}
